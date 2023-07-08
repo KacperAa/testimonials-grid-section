@@ -1,0 +1,248 @@
+:root {
+  --clr-primary-100: hsl(0, 0%, 100%);
+  --clr-primary-400: hsl(263, 55%, 52%);
+  --clr-primary-600: hsl(217, 19%, 35%);
+  --clr-primary-800: hsl(219, 29%, 14%);
+
+  --clr-neutral-100: hsl(210, 46%, 95%);
+  --clr-neutral-200: hsl(0, 0%, 81%);
+
+  --ff-body: "Barlow Semi Condensed", sans-serif;
+
+  --fw-normal: 500;
+  --fw-semi-bold: 600;
+
+  --fs-400: 0.8125rem;
+  --fs-600: 1rem;
+
+  --fs-body: var(--fs-400);
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  display: grid;
+  align-content: center;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  font-family: var(--ff-body);
+  font-size: var(--fs-body);
+  background-color: var(--clr-neutral-200);
+}
+
+.container {
+  padding: 3.5rem 1.5rem;
+  display: grid;
+  gap: 1.5rem;
+  grid-template-areas:
+    "first"
+    "second"
+    "third"
+    "fourth"
+    "fifth";
+}
+
+.card {
+  padding: 1.75rem;
+  border-radius: 0.5rem;
+}
+
+.card[card-position="one"] {
+  grid-area: first;
+}
+.card[card-position="two"] {
+  grid-area: second;
+}
+.card[card-position="three"] {
+  grid-area: third;
+}
+.card[card-position="four"] {
+  grid-area: fourth;
+}
+.card[card-position="five"] {
+  grid-area: fifth;
+}
+
+.card h2 {
+  font-size: 1.125rem;
+  line-height: 1.25;
+}
+
+.card p {
+  margin-block-start: 1rem;
+  letter-spacing: 0.5px;
+  opacity: 0.5;
+  line-height: 1.2;
+}
+
+.img-and-txt {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.img-and-txt img {
+  border-radius: 50vh;
+  height: 2rem;
+}
+
+.img-and-txt div {
+  display: grid;
+  line-height: 1;
+}
+
+.name {
+  font-weight: var(--fw-semi-bold);
+  color: var(--clr-neutral-100);
+}
+
+.profesion {
+  font-size: 0.75rem;
+}
+
+.card[card-position="three"] .img-and-txt .name {
+  color: var(--clr-primary-800);
+  opacity: 0.8;
+}
+
+.card[card-position="five"] .name {
+  color: var(--clr-primary-800);
+  opacity: 0.8;
+}
+.card.quotate {
+  background-image: url(images/bg-pattern-quotation.svg);
+  background-repeat: no-repeat;
+  background-position: top right 10%;
+}
+
+@media (min-width: 50em) {
+  .container {
+    grid-template-areas:
+      "first first"
+      "second fifth"
+      "third fifth"
+      "fourth fourth";
+  }
+}
+
+@media (min-width: 70em) {
+  .container {
+    padding-inline: 10rem;
+    grid-template-areas:
+      "first first second fifth"
+      " third fourth fourth fifth ";
+  }
+}
+
+/* utility classes */
+.border-primary-400 {
+  border: 2px solid var(--clr-primary-400);
+}
+
+.border-neutral-100 {
+  border: 2px solid var(--clr-neutral-200);
+}
+
+.bg-color-100 {
+  background-color: var(--clr-neutral-100);
+}
+
+.bg-color-400 {
+  background-color: var(--clr-primary-400);
+}
+
+.bg-color-600 {
+  background-color: var(--clr-primary-600);
+}
+
+.bg-color-800 {
+  background-color: var(--clr-primary-800);
+}
+
+.heading-color-600 {
+  color: var(--clr-primary-600);
+}
+
+.text-color-800 {
+  color: var(--clr-primary-800);
+}
+
+.text-color-100 {
+  color: var(--clr-primary-100);
+}
+
+.attribution {
+  position: absolute;
+  bottom: 0;
+}
